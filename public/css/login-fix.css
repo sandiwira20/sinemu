@@ -1,0 +1,91 @@
+/* =========================
+   LOGIN FINAL FIX
+========================= */
+
+.auth-page {
+    grid-template-columns: 1.2fr 1fr;
+}
+
+/* PANEL KIRI */
+.auth-visual-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-visual-panel__headline {
+    max-width: 420px;
+}
+
+.auth-visual-panel__slide {
+    position: static;
+    opacity: 1;
+    transform: none;
+    margin-top: 2rem;
+}
+
+.auth-visual-panel__slide img {
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+/* PANEL KANAN */
+.auth-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.auth-panel-box {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* JUDUL */
+.auth-panel-box h2 {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+}
+
+.auth-panel-box .subtitle {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+}
+
+/* INPUT FIX */
+.auth-panel-box input {
+    background: #fff !important;
+    color: #111827 !important;
+    border: 1px solid #d1d5ff;
+}
+
+.auth-panel-box input::placeholder {
+    color: #9ca3af;
+}
+
+.auth-panel-box input:-webkit-autofill {
+    -webkit-text-fill-color: #111827;
+    box-shadow: 0 0 0 1000px #fff inset;
+}
+
+/* BUTTON */
+.auth-panel-box button {
+    margin-top: 0.6rem;
+}
+
+/* GOOGLE */
+.btn-google {
+    width: 100%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .auth-page {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-visual-panel {
+        display: none;
+    }
+}

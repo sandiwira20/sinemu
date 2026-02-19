@@ -1,0 +1,22 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "backdrop-filter",
+          "scrollbar-width",
+          "scrollbar-width: thin",
+          "scrollbar-color",
+          "mask-size",
+          "mask-repeat",
+          "mask-position",
+          "mask-image"
+        ]
+      }
+    ]
+  }
+}

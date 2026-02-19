@@ -1,0 +1,143 @@
+.report-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 1.8rem 1.6rem;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eef1f6;
+}
+
+.report-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.2rem;
+}
+
+.report-upload {
+    margin-top: 1.25rem;
+    padding: 1.2rem;
+    border-radius: 16px;
+    border: 1px dashed #b6bed6;
+    text-align: center;
+    font-size: 0.92rem;
+    color: #4b5565;
+    background-color: #fafbff;
+}
+
+.file-feedback {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #526179;
+}
+
+.file-feedback.error {
+    color: #b91c1c;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-weight: 600;
+    color: #2c3f63;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+}
+
+.form-control {
+    border: 1px solid rgba(31, 41, 55, 0.16);
+    border-radius: 12px;
+    padding: 0.82rem 0.95rem;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background: #fff;
+}
+
+.form-control:focus {
+    border-color: #7396d9;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(115, 150, 217, 0.15);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-top: 1.4rem;
+}
+
+.form-actions .btn,
+.form-actions .btn-outline {
+    min-width: 140px;
+    justify-content: center;
+}
+
+.create-item-option {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    align-items: flex-start;
+    margin-top: 0.6rem;
+}
+
+.create-item-option label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.create-item-option .helper {
+    margin-left: 1.6rem;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+@media (max-width: 900px) {
+    .report-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .report-card {
+        padding: 1.4rem 1.2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .user-main .section-title {
+        font-size: 1.35rem;
+        margin: 0 0.9rem 0.6rem;
+    }
+
+    .report-card {
+        padding: 1.1rem 1rem;
+        border-radius: 16px;
+        margin: 0.6rem -1rem 0rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-control {
+        padding: 0.75rem 0.85rem;
+        font-size: 0.9rem;
+    }
+
+    .report-upload {
+        padding: 1rem;
+        font-size: 0.88rem;
+    }
+
+    .form-actions,
+    .report-card .btn {
+        width: 100%;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,223 @@
+.footer {
+    background: linear-gradient(180deg, #eaf0ff 0%, #f7f9ff 100%);
+    padding: 2.8rem 0 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid #dde6ff;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: all 0.4s ease;
+}
+
+.footer.footer-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 1.8rem;
+    align-items: start;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--primary-dark);
+}
+
+.footer-logo-badge {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #4b5bdc, #6fa2f5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 800;
+}
+
+.footer-desc {
+    font-size: 0.95rem;
+    color: #4a5c7a;
+    max-width: 360px;
+    line-height: 1.5;
+}
+
+.footer-badges {
+    display: flex;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+    margin-top: 0.4rem;
+}
+
+.tag {
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    background: #ffffff;
+    border: 1px solid #dce4ff;
+    color: #2f3a5b;
+    font-weight: 700;
+    font-size: 0.8rem;
+    box-shadow: 0 6px 14px rgba(79, 97, 214, 0.12);
+}
+
+.tag.subtle {
+    background: #eef2ff;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+.footer-title {
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: #1f2937;
+}
+
+.footer-contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.3rem;
+    color: #4a5c7a;
+    font-size: 0.95rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 0.4rem;
+}
+
+.footer-social a {
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #4b5bdc;
+    border: 1px solid #e5e9f5;
+}
+
+.footer-social a svg {
+    width: 18px;
+    height: 18px;
+}
+
+.footer-bottom {
+    max-width: var(--max-width);
+    margin: 2rem auto 0;
+    padding: 0 1.5rem;
+}
+
+.footer-divider {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(79, 97, 214, 0.2), transparent 30%, transparent 70%, rgba(111, 162, 245, 0.2));
+    margin-bottom: 0.8rem;
+}
+
+.footer-bottom-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    color: #4a5c7a;
+}
+
+.footer-links a {
+    margin-left: 0.8rem;
+    color: #2f3a5b;
+    font-weight: 700;
+}
+
+@media (max-width: 900px) {
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom-text {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-links a {
+        margin-left: 0;
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer {
+        padding: 2rem 0 1.6rem;
+    }
+
+    .footer-inner {
+        padding: 0 1rem;
+        gap: 1.2rem;
+    }
+
+    .footer-logo {
+        font-size: 1.1rem;
+    }
+
+    .footer-logo-badge {
+        width: 30px;
+        height: 30px;
+        border-radius: 9px;
+    }
+
+    .footer-desc {
+        font-size: 0.9rem;
+    }
+
+    .footer-badges {
+        gap: 0.35rem;
+    }
+
+    .tag {
+        padding: 0.28rem 0.6rem;
+        font-size: 0.75rem;
+        box-shadow: none;
+    }
+
+    .footer-contact ul {
+        font-size: 0.9rem;
+        gap: 0.2rem;
+    }
+
+    .footer-social a {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+        box-shadow: none;
+    }
+
+    .footer-bottom {
+        padding: 0 1rem;
+    }
+
+    .footer-bottom-text {
+        font-size: 0.85rem;
+    }
+}
