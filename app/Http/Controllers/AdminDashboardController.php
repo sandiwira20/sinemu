@@ -11,18 +11,18 @@ class AdminDashboardController extends Controller
 {
     public function index()
     {
-        $itemCount   = Item::count();
-        $openClaims  = Claim::where('status', 'pending')->count();
+        $itemCount = Item::count();
+        $openClaims = Claim::where('status', 'pending')->count();
         $openReports = LostReport::where('status', 'open')->count();
 
         $categories = Category::select('id', 'name')->orderBy('name')->get();
 
-        $reportHistoryRaw = LostReport::selectRaw("DATE_FORMAT(created_at, '%Y-%m') as ym, COUNT(*) as total")
+        $reportHistoryRaw = LostReport::selectRaw("TO_CHAR(created_at, 'YYYY-MM') as ym, COUNT(*) as total")
             ->groupBy('ym')
             ->orderBy('ym', 'asc')
             ->get();
 
-        $reportHistoryByCategoryRaw = LostReport::selectRaw("DATE_FORMAT(created_at, '%Y-%m') as ym, COUNT(*) as total, category_id")
+        $reportHistoryByCategoryRaw = LostReport::selectRaw("TO_CHAR(created_at, 'YYYY-MM') as ym, COUNT(*) as total, category_id")
             ->groupBy('ym', 'category_id')
             ->orderBy('ym', 'asc')
             ->get();
@@ -41,7 +41,7 @@ class AdminDashboardController extends Controller
 
         $latestItems = Item::with('category')->latest()->take(5)->get();
         $latestReports = LostReport::with(['user', 'category'])->latest()->take(5)->get();
-        $latestClaims  = Claim::with(['user', 'item'])->latest()->take(5)->get();
+        $latestClaims = Claim::with(['user', 'item'])->latest()->take(5)->get();
 
         return view('admin.dashboard', compact(
             'itemCount',
