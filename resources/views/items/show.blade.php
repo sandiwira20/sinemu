@@ -16,7 +16,7 @@
                 @endif
         </div>
         <div class="item-detail__info">
-            <p class="eyebrow">Detail barang</p>
+            <p class="eyebrow">Detail barang yg di ubah di test</p>
             <h1 class="section-title" style="margin:0 0 0.4rem;">{{ $item->name }}</h1>
             <p class="item-subtitle" style="margin:0 0 1rem;">{{ $item->description }}</p>
             <p class="item-subtitle" style="margin:0 0 1.2rem;">
