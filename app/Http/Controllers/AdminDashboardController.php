@@ -17,12 +17,12 @@ class AdminDashboardController extends Controller
 
         $categories = Category::select('id', 'name')->orderBy('name')->get();
 
-        $reportHistoryRaw = LostReport::selectRaw("TO_CHAR(created_at, 'YYYY-MM') as ym, COUNT(*) as total")
+        $reportHistoryRaw = LostReport::selectRaw("DATE_FORMAT(created_at, '%Y-%m') as ym, COUNT(*) as total")
             ->groupBy('ym')
             ->orderBy('ym', 'asc')
             ->get();
 
-        $reportHistoryByCategoryRaw = LostReport::selectRaw("TO_CHAR(created_at, 'YYYY-MM') as ym, COUNT(*) as total, category_id")
+        $reportHistoryByCategoryRaw = LostReport::selectRaw("DATE_FORMAT(created_at, '%Y-%m') as ym, COUNT(*) as total, category_id")
             ->groupBy('ym', 'category_id')
             ->orderBy('ym', 'asc')
             ->get();

@@ -23,5 +23,6 @@ jobs:
             cd /var/www/sinemu
             git pull origin main
             composer install --no-dev
+            php artisan test
             php artisan migrate --force
             php artisan optimize
