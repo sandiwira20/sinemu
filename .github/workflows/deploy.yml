@@ -76,8 +76,8 @@ jobs:
             echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
             cd /home/${{ secrets.SERVER_USER }}/RPL2D-kelompok-2
             docker pull ghcr.io/${{ github.repository }}:latest
-            docker compose up -d --remove-orphans
+            docker-compose up -d --remove-orphans
             echo "⏳ Menunggu container ready..."
             sleep 10
-            docker compose exec -T app php artisan migrate --force --no-interaction
+            docker-compose exec -T app php artisan migrate --force --no-interaction
             echo "✅ Deployment selesai!"
