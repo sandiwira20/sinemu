@@ -50,8 +50,8 @@ Route::get('/katalog', function () {
     }
     if ($query) {
         $itemsQuery->where(function ($q) use ($query) {
-            $q->where('name', 'like', '%'.$query.'%')
-                ->orWhere('description', 'like', '%'.$query.'%');
+            $q->where('name', 'like', '%' . $query . '%')
+                ->orWhere('description', 'like', '%' . $query . '%');
         });
     }
 
