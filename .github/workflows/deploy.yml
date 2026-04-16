@@ -55,6 +55,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           provenance: false
+          format: docker
 
   # ─── JOB 2: DEPLOY KE VPS ────────────────────────────────
   deploy:
