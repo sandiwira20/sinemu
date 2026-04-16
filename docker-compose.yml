@@ -3,7 +3,7 @@ services:
   app:
     build: .
     ports:
-      - "8083:80"
+      - "8082:80"
     environment:
       - APP_ENV=local
       - APP_KEY=${APP_KEY}
