@@ -1,0 +1,50 @@
+name: Laravel CI Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_DATABASE: testing_db
+          MYSQL_ROOT_PASSWORD: secret
+        ports: ["3306:3306"]
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # --- BUILD PHASE ---
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+          extensions: mbstring, pdo, sqlite3
+          coverage: xdebug
+
+      - name: Install Dependencies (Composer)
+        run: composer install --no-interaction --prefer-dist
+
+      - name: Copy .env
+        run: cp .env.example .env && php artisan key:generate
+
+      # --- TESTING PHASE ---
+      - name: Run Static Analysis (PHPStan)
+        run: vendor/bin/phpstan analyse --level=5
+        continue-on-error: true
+
+      - name: Run Unit & Feature Tests
+        run: php artisan test --coverage-min=80
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: ":memory:"
+
+      - name: Upload Coverage Report
+        uses: codecov/codecov-action@v3
