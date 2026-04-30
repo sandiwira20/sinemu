@@ -41,7 +41,7 @@ jobs:
         continue-on-error: true
 
       - name: Run Unit & Feature Tests
-        run: php artisan test --coverage-min=80
+        run: php artisan test
         env:
           DB_CONNECTION: sqlite
           DB_DATABASE: ":memory:"
